@@ -1,0 +1,740 @@
+<com.webreach.mirth.model.Channel>
+  <id>def84bef-f165-4bef-b138-b6f40b3326fc</id>
+  <name>OpenMRS to iDart Integration</name>
+  <description></description>
+  <enabled>true</enabled>
+  <version>1.6.1.2750</version>
+  <revision>3.0.0.6931</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="ackIP"></property>
+      <property name="ackOnNewConnection">0</property>
+      <property name="bufferSize">65536</property>
+      <property name="port">6661</property>
+      <property name="ackPort"></property>
+      <property name="DataType">TCP Listener</property>
+      <property name="receiveTimeout">5000</property>
+      <property name="charsetEncoding">DEFAULT_ENCODING</property>
+      <property name="host">localhost</property>
+      <property name="responseValue">None</property>
+    </properties>
+    <transformer>
+      <steps>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>0</sequenceNumber>
+          <name>givenName</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;givenName&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;givenName&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>givenName</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;givenName&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>1</sequenceNumber>
+          <name>familyName</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;familyName&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;familyName&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>familyName</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;familyName&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>2</sequenceNumber>
+          <name>gender</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;gender&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;gender&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>gender</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;gender&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>3</sequenceNumber>
+          <name>birthdate</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;birthdate&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;birthdate&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>birthdate</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;birthdate&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>4</sequenceNumber>
+          <name>address1</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;address1&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;address1&apos;, validate( mapping , "", new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>address1</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>""</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;address1&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>5</sequenceNumber>
+          <name>address2</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;address2&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;address2&apos;, validate( mapping , "", new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>address2</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>""</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;address2&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>6</sequenceNumber>
+          <name>province</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;province&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;province&apos;, validate( mapping , "", new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>province</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>""</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;province&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>7</sequenceNumber>
+          <name>country</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;country&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;country&apos;, validate( mapping , "", new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>country</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>""</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;country&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>8</sequenceNumber>
+          <name>patientId</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;patientId&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;patientId&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>patientId</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;patientId&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>9</sequenceNumber>
+          <name>city</name>
+          <script>var mapping;try { mapping = msg[&apos;patient&apos;][&apos;city&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;city&apos;, validate( mapping , "", new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>city</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string>""</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;patient&apos;][&apos;city&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>10</sequenceNumber>
+          <name>numWeeks</name>
+          <script>var mapping;try { mapping = msg[&apos;drugOrders&apos;][&apos;@numWeeks&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;numWeeks&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>numWeeks</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;drugOrders&apos;][&apos;@numWeeks&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>11</sequenceNumber>
+          <name>doctorGivenName</name>
+          <script>var mapping;try { mapping = msg[&apos;doctor&apos;][&apos;givenName&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;doctorGivenName&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>doctorGivenName</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;doctor&apos;][&apos;givenName&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>12</sequenceNumber>
+          <name>doctorFamilyName</name>
+          <script>var mapping;try { mapping = msg[&apos;doctor&apos;][&apos;familyName&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;doctorFamilyName&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+          <type>Mapper</type>
+          <data class="map">
+            <entry>
+              <string>Variable</string>
+              <string>doctorFamilyName</string>
+            </entry>
+            <entry>
+              <string>DefaultValue</string>
+              <string></string>
+            </entry>
+            <entry>
+              <string>RegularExpressions</string>
+              <list/>
+            </entry>
+            <entry>
+              <string>Mapping</string>
+              <string>msg[&apos;doctor&apos;][&apos;familyName&apos;].toString()</string>
+            </entry>
+            <entry>
+              <string>isGlobal</string>
+              <string>channel</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+        <com.webreach.mirth.model.Step>
+          <sequenceNumber>13</sequenceNumber>
+          <name>Handle multiple drug Orders</name>
+          <script>logger.info("Starting to parse drugorders");
+
+var dose = new Array();
+var timesPerDay = new Array();
+var daysPerWeek = new Array();
+var drugName = new Array();
+
+var i = 0;
+while(msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i] != null) {
+	dose[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;dose&apos;];
+	timesPerDay[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;timesPerDay&apos;];
+	daysPerWeek[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;daysPerWeek&apos;];
+	drugName[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;drugName&apos;];
+	i++;
+}
+
+channelMap.put(&apos;dose&apos;, dose);
+channelMap.put(&apos;timesPerDay&apos;, timesPerDay);
+channelMap.put(&apos;daysPerWeek&apos;, daysPerWeek);
+channelMap.put(&apos;drugName&apos;, drugName);</script>
+          <type>JavaScript</type>
+          <data class="map">
+            <entry>
+              <string>Script</string>
+              <string>logger.info("Starting to parse drugorders");
+
+var dose = new Array();
+var timesPerDay = new Array();
+var daysPerWeek = new Array();
+var drugName = new Array();
+
+var i = 0;
+while(msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i] != null) {
+	dose[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;dose&apos;];
+	timesPerDay[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;timesPerDay&apos;];
+	daysPerWeek[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;daysPerWeek&apos;];
+	drugName[i] = msg[&apos;drugOrders&apos;][&apos;drugOrder&apos;][i][&apos;drugName&apos;];
+	i++;
+}
+
+channelMap.put(&apos;dose&apos;, dose);
+channelMap.put(&apos;timesPerDay&apos;, timesPerDay);
+channelMap.put(&apos;daysPerWeek&apos;, daysPerWeek);
+channelMap.put(&apos;drugName&apos;, drugName);</string>
+            </entry>
+          </data>
+        </com.webreach.mirth.model.Step>
+      </steps>
+      <inboundTemplate><?xml version="1.0" encoding="UTF-8"?>
+<OpenMRS-export>
+<patient>
+<patientId>2-202</patientId>
+<givenName>Jane</givenName>
+<familyName>Doe</familyName>
+<gender>F</gender>
+<birthdate>2006-06-02</birthdate>
+<address1>123 Test Street</address1>
+<address2>Test Place</address2>
+<city>Test Town</city>
+<province></province>
+<country>Testonia</country>
+</patient>
+<doctor>
+<givenName>Ryan</givenName>
+<familyName>Crichton</familyName>
+</doctor>
+<drugOrders numWeeks="2">
+<drugOrder>
+<dose>2.0</dose>
+<drugName>Test drug 1</drugName>
+<timesPerDay>1</timesPerDay>
+<daysPerWeek>7</daysPerWeek>
+</drugOrder>
+<drugOrder>
+<dose>15.0</dose>
+<drugName>Test drug 2</drugName>
+<timesPerDay>2</timesPerDay>
+<daysPerWeek>7</daysPerWeek>
+</drugOrder>
+</drugOrders>
+</OpenMRS-export>
+</inboundTemplate>
+      <outboundTemplate></outboundTemplate>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties/>
+      <outboundProperties/>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>TCP Listener</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+  </sourceConnector>
+  <destinationConnectors>
+    <com.webreach.mirth.model.Connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="username">postgres</property>
+        <property name="DataType">Database Writer</property>
+        <property name="useScript">1</property>
+        <property name="URL">jdbc:postgresql://localhost:5432/pharm</property>
+        <property name="query"></property>
+        <property name="script">logger.info("Attempting to write information to Database");
+var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;org.postgresql.Driver&apos;,&apos;jdbc:postgresql://localhost:5432/pharm&apos;,&apos;postgres&apos;,&apos;admin&apos;);
+logger.info("Connected to Database");
+
+//==== SETTINGS ====
+var clinicNum = 2;
+//==== /SETTINGS ====
+
+//check if patient already exists in db
+var query = "SELECT id FROM patient WHERE patientid = &apos;" + $(&apos;patientId&apos;) + "&apos;;";
+logger.info(query);
+var result = dbConn.executeCachedQuery(query);
+if (result.next()) {
+	var patientId = result.getInt(1);
+	logger.info("Patient exists");
+} else {
+	if ($(&apos;address1&apos;) != null && $(&apos;address1&apos;) != "") {
+		//split address into the expected parts
+		var index = $(&apos;address1&apos;).indexOf(" ");
+		var streetNum = $(&apos;address1&apos;).substring(0, index);
+		var address1 = $(&apos;address1&apos;).substring(index + 1);
+		var addressStr = address1 + ", " + $(&apos;address2&apos;);
+	} else {
+		var streetNum = "";
+		var addressStr = "";
+	}
+
+	//get next expected id value
+	var query = "SELECT MAX(id) FROM patient;";
+	var idresult = dbConn.executeCachedQuery(query);
+	idresult.next();
+	var patientId = (idresult.getInt(1) + 1);
+
+	//add patient to db
+	var result = dbConn.executeUpdate("INSERT INTO patient (id, accountstatus, cellphone, dateofbirth, clinic, firstnames, homephone, idnum, lastname, modified, patientid, province, sex, workphone, address1, address2, address3, nextofkinname, nextofkinphone, race) "
+	 + "VALUES (&apos;" + patientId + "&apos;, &apos;TRUE&apos;, &apos;&apos;, &apos;" + $(&apos;birthdate&apos;) + "&apos;, &apos;" + clinicNum + "&apos;, &apos;" + $(&apos;givenName&apos;) + "&apos;, &apos;&apos;, &apos;&apos;, &apos;" + $(&apos;familyName&apos;) + "&apos;, &apos;&apos;, &apos;" + $(&apos;patientId&apos;) + "&apos;, &apos;" + $(&apos;province&apos;) + "&apos;, &apos;" + $(&apos;gender&apos;) + "&apos;, &apos;&apos;, &apos;" + streetNum + "&apos;, &apos;" + addressStr + "&apos;, &apos;" + $(&apos;city&apos;) + "&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;);");
+	logger.info("Patient created");
+};
+
+//check if there is an episode for the pateint
+var query = "SELECT id FROM episode WHERE patient = &apos;" + patientId + "&apos;;";
+var result = dbConn.executeCachedQuery(query);
+if (!result.next()) {
+	//get next expected id value
+	var query = "SELECT MAX(id) FROM episode;";
+	var idresult = dbConn.executeCachedQuery(query);
+	idresult.next();
+	var episodeId = (idresult.getInt(1) + 1);	
+	logger.info("EpisodeId: " + episodeId);
+
+	//add patient episode
+	var result = dbConn.executeUpdate("INSERT INTO episode (id, startdate, startreason, stopreason, startnotes, stopnotes, patient, index) "
+	 + "VALUES (&apos;" + episodeId + "&apos;, &apos;" + DateUtil.getCurrentDate(&apos;yyyy-M-d&apos;) + "&apos;, &apos;New Patient&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;" + patientId + "&apos;, &apos;0&apos;)");
+	logger.info("Patient had no episode, one was created");
+} else {
+	logger.info("Patient is on an episode already");
+}
+
+//get next expected id value
+var query = "SELECT MAX(id) FROM prescription;";
+var idresult = dbConn.executeCachedQuery(query);
+idresult.next();
+var perscriptionId = (idresult.getInt(1) + 1);
+
+// get the doctor id
+var query = "SELECT id FROM doctor WHERE firstname = &apos;" + $(&apos;doctorGivenName&apos;) + "&apos; AND lastname = &apos;" + $(&apos;doctorFamilyName&apos;) + "&apos;;";
+logger.info(query);
+var idresult = dbConn.executeCachedQuery(query);
+if (idresult.next()) {;
+	var doctorId = idresult.getInt(1);
+	logger.info("DoctorID: " + doctorId);
+} else {
+	//get next expected id value
+	var query = "SELECT MAX(id) FROM doctor;";
+	var idresult = dbConn.executeCachedQuery(query);
+	idresult.next();
+	var doctorId = (idresult.getInt(1) + 1);
+	
+	var result = dbConn.executeUpdate("INSERT INTO doctor (id, emailaddress, firstname, lastname, mobileno, modified, telephoneno, active) "
+	+ "VALUES (&apos;" + doctorId + "&apos;, &apos;&apos;, &apos;" + $(&apos;doctorGivenName&apos;) + "&apos;, &apos;" + $(&apos;doctorFamilyName&apos;) + "&apos;, &apos;&apos;, &apos;T&apos;, &apos;&apos;, &apos;TRUE&apos;)");
+
+}
+
+//get next expected perscription letter for the perscription id
+var query = "SELECT MAX(prescriptionid) FROM prescription WHERE patient = " + patientId + " AND prescriptionid LIKE &apos;" + DateUtil.getCurrentDate(&apos;yyMMdd&apos;) + "%&apos;;";
+logger.info(query);
+var result = dbConn.executeCachedQuery(query);
+if (result.next()) {
+	var perscriptionLetter = result.getString(1);
+	if (perscriptionLetter != null) {
+		logger.info("More than one percription today, generating prescription id");
+		perscriptionLetter = perscriptionLetter.substring(6,7);
+		perscriptionLetter = String.fromCharCode(perscriptionLetter.charCodeAt(0) + 1);
+		logger.info("Letter: " + perscriptionLetter);
+		if (perscriptionLetter == "[") {
+			var perscriptionLetter = &apos;A&apos;;
+		}
+	} else {
+		var perscriptionLetter = &apos;A&apos;;
+		logger.info("First Prescription for today");
+	}
+} else {
+	var perscriptionLetter = &apos;A&apos;;
+	logger.info("First Prescription for today");
+}
+
+var result = dbConn.executeUpdate("INSERT INTO prescription (id, clinicalstage, current, date, doctor, duration, modified, patient, prescriptionid, weight, reasonforupdate, notes) "
+ + "VALUES (&apos;" + perscriptionId + "&apos;, &apos;0&apos;, &apos;T&apos;, &apos;" + DateUtil.getCurrentDate(&apos;yyyy-M-d&apos;) + "&apos;, &apos;" + doctorId + "&apos;, &apos;" + $(&apos;numWeeks&apos;) + "&apos;, &apos;T&apos;, &apos;" + patientId + "&apos;, &apos;" + DateUtil.getCurrentDate(&apos;yyMMdd&apos;) + perscriptionLetter + &apos;-&apos; + $(&apos;patientId&apos;) + "&apos;, &apos;0&apos;, &apos;Initial&apos;, &apos;&apos;)");
+
+logger.info("Perscription created");
+
+//get next expected id value
+var query = "SELECT MAX(id) FROM prescribeddrugs;";
+var idresult = dbConn.executeCachedQuery(query);
+idresult.next();
+var prescribeddrugsId = (idresult.getInt(1) + 1);
+
+// get drug order variables
+var dose = $(&apos;dose&apos;);
+var timesPerDay = $(&apos;timesPerDay&apos;);
+var daysPerWeek = $(&apos;daysPerWeek&apos;);
+var drugName = $(&apos;drugName&apos;);
+
+for (var i = 0 ; i < drugName.length ; i++) {
+	logger.info("At Start of loop: " + i);
+
+	var drugNameStr = drugName[i].toString();
+	logger.info("DrugName: " + drugNameStr);
+
+	if (drugNameStr == "d4T-30") {
+		logger.info("Equal!");
+		iDartDrugName = "[D4T] Stavudine 30mg";
+	}
+
+	logger.info("iDartDrugName: " + iDartDrugName);
+
+/** ===============DRUG MAPPINGS=============== **/
+/** Add drug mapping from OpenMRS to iDart here **/
+	var iDartDrugName = "";
+	//find drugId for this drug
+	switch (drugNameStr) {
+		case "d4T-30": iDartDrugName = "[D4T] Stavudine 30mg";
+		break;
+		case "3TC-150": iDartDrugName = "[3TC] Lamivudine 150mg";
+		break;
+		case "EFV-600": iDartDrugName = "[EFV] Efavirenz 600mg";
+		break;
+		case "NVP-200": iDartDrugName = "[NVP] Nevirapine 200mg";
+		break;
+		case "AZT 300mg": iDartDrugName = "[AZT] Zidovudine 300mg";
+		break;
+		case "ddI 250mg": iDartDrugName = "[DDI] Didanosine 250mg";
+		break;
+		case "ddI-400": iDartDrugName = "[DDI] Didanosine 400mg";
+		break;
+		case "LPV/r-400/100": iDartDrugName = "[LPV/r] Aluvia 400/100mg";
+		break;
+		case "LPV/RTV 400/400mg": iDartDrugName = "[LPV/RTV] Kaletra 400/400 mg";
+		break;
+		case "TDF-300": iDartDrugName = "[TDF] Tenofovir 300mg";
+		break;
+		case "ABC-300": iDartDrugName = "[ABC] Abacavir 300mg";
+		break;
+		case "IDV/r-800/100": iDartDrugName = "[IDV/r] Indinavir/Ritonavir 800/100mg";
+		break;
+		case "Cotrimoxazole": iDartDrugName = "Cotrimoxazole";
+		break;
+		case "Dapsone": iDartDrugName = "Dapsone";
+		break;
+		case "Vit B Complex": iDartDrugName = "Vitamin B Complex";
+		break;
+		case "Paracetemol": iDartDrugName = "Paracetemol";
+		break;
+		case "Penicillin": iDartDrugName = "Penicillin";
+		break;
+		case "Folic Acid": iDartDrugName = "Folic Acid";
+		break;
+		default: logger.error("No drug match found, make sure the drug is mapped correctly");
+			 return;
+	}
+/** =========================================== **/
+/** =========================================== **/
+
+	logger.info("iDartDrugName: " + iDartDrugName);
+
+	//get next expected id value
+	var query = "SELECT id FROM drug WHERE name = &apos;" + iDartDrugName + "&apos;;";
+	var idresult = dbConn.executeCachedQuery(query);
+	idresult.next();
+	var drugId = idresult.getInt(1);
+
+	logger.info("DrugId: " + drugId);
+
+	logger.info("Dose:" + dose[i]);
+	logger.info("TimesPerDay:" + timesPerDay[i]);
+
+	var result = dbConn.executeUpdate("INSERT INTO prescribeddrugs (id, amtpertime, drug, prescription, timesperday, modified, prescribeddrugsindex) "
+	 + "VALUES (&apos;" + prescribeddrugsId + "&apos;, &apos;" + dose[i] + "&apos;, &apos;" + drugId + "&apos;, &apos;" + perscriptionId + "&apos;, &apos;" + timesPerDay[i] + "&apos;, &apos;T&apos;, &apos;" + i + "&apos;)");
+
+	prescribeddrugsId++;
+}
+
+dbConn.close();</property>
+        <property name="password">admin</property>
+        <property name="host">query</property>
+        <property name="driver">org.postgresql.Driver</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundTemplate></inboundTemplate>
+        <outboundTemplate></outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties/>
+        <outboundProperties/>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>Database Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+    </com.webreach.mirth.model.Connector>
+  </destinationConnectors>
+  <properties>
+    <property name="synchronous">true</property>
+    <property name="removeNamespace">true</property>
+    <property name="transactional">false</property>
+    <property name="initialState">started</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="encryptData">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the mule engine is started
+// You only have access to the globalMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the mule engine is stopped
+// You only have access to the globalMap here to persist data
+return;</shutdownScript>
+</com.webreach.mirth.model.Channel>
